@@ -14,7 +14,15 @@
 <iframe src="src/c_box.php">
     <p>iframes not supported.</p>
 </iframe>
+<h3>
+    <?php
+    $sql_reactie = "SELECT * FROM comments ORDER BY date DESC";
 
+    $ophalen_reactie = mysqli_query($conn, $sql_reactie);
+    $aantal_reacties = mysql_num_rows($ophalen_reactie);
+
+    ?>
+</h3>
 
 </body>
 </html>
