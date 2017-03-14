@@ -18,7 +18,7 @@
     <?php
     $sql_reactie = "SELECT * FROM comments ORDER BY date DESC";
 
-    $ophalen_reactie = mysqli_query($conn, $sql_reactie);
+    $ophalen_reactie = mysqli_query($sql_reactie);
     $aantal_reacties = mysql_num_rows($ophalen_reactie);
 
     ?>
