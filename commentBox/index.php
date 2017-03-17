@@ -27,11 +27,7 @@ $db = new DbConn();
 </h3>
     <h5>
     <?php
-    print($name);
-
     $rowsAll = $db -> select('SELECT * FROM `comments` ORDER BY `id` DESC');
-
-    //print_r($rowsAll);
     foreach ($rowsAll as $row){
         echo "NR: "        . $row['id']. "<br>" .
              "Name: "      . $row['naam']. "<br>" .
@@ -40,7 +36,6 @@ $db = new DbConn();
             "<br>"
         ;
     }
-
     ?>
     </h5>
 
