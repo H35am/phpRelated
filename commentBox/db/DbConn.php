@@ -1,12 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: HeszaR
- * Time: 19:50
- */
-
-
 class DbConn
 {
 
