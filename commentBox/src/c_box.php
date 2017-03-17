@@ -1,13 +1,27 @@
-<form method="post">
+<?php
+include('../db/DbConn.php');
 
-    Name: <input type="text" name="Name" id="name"> <br>
+if (isset($_POST['sendThis'])) {
+    $db = new DbConn();
+    $name = $db->quote($_POST['name_send']);
+    $msg = $db->quote($_POST['comment_send']);
+
+    $write = $db->query("INSERT INTO `comments` (`naam`,`msg`) VALUES(" . $name. "," .$msg. ")");
+}
+
+print_r($schrijf);
+
+?>
+
+
+<form method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
+
+    Name: <input type="text" name="name_send" > <br>
 
     Comment: <br>
-    <textarea type="text" name="Comment" id="comment"> </textarea> <br>
+    <textarea type="text" name="comment_send" ></textarea> <br>
 
-    <input name="commentId" id="commentId" type="hidden" value="<? echo $_GET['id']; ?>" >
-
-    <input type="submit" value="Submit"> <input type="reset" value="Reset">
+    <input type="submit" value="Submit" name="sendThis"> <input type="reset" value="Reset">
 
 </form>
 

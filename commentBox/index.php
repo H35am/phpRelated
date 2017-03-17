@@ -1,5 +1,7 @@
-<?php 	session_start(); ?>
-<?php include('incl/conn.php');	?>
+<?php
+include('./db/DbConn.php');
+$db = new DbConn();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,20 +11,40 @@
 </head>
 <body>
 <h2>
-    Comments and stuff!
+    Leave a comments about this cutie! <br>
+    <img src="http://placekitten.com/400/200" />
 </h2>
+
+
+
 <iframe src="src/c_box.php">
     <p>iframes not supported.</p>
 </iframe>
 <h3>
-    <?php
-    $sql_reactie = "SELECT * FROM comments ORDER BY date DESC";
+    Comments:
 
-    $ophalen_reactie = mysqli_query($conn, $sql_reactie);
-    $aantal_reacties = mysql_num_rows($ophalen_reactie);
+
+</h3>
+    <h5>
+    <?php
+    print($name);
+
+    $rowsAll = $db -> select('SELECT * FROM `comments` ORDER BY `id` DESC');
+
+    //print_r($rowsAll);
+    foreach ($rowsAll as $row){
+        echo "NR: "        . $row['id']. "<br>" .
+             "Name: "      . $row['naam']. "<br>" .
+             "Commnet: "   . $row['msg'] . "<br>" .
+             "Date: "      . $row['date']. "<br>" .
+            "<br>"
+        ;
+    }
 
     ?>
-</h3>
+    </h5>
+
+
 
 </body>
 </html>
