@@ -1,0 +1,9 @@
+CREATE TABLE `pitlozeDuif`.`doveAdmin`
+(   `id` INT(11) NOT NULL AUTO_INCREMENT ,
+    `owner_firstname` VARCHAR(45) NOT NULL ,
+    `owner_lastname` VARCHAR(45) NOT NULL ,
+    `name_dove` VARCHAR(45) NOT NULL ,
+    `weight_dove` INT NOT NULL ,
+    `age_dove` INT NOT NULL ,
+    PRIMARY KEY (`id`)
+    ) ENGINE = InnoDB;
