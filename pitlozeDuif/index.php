@@ -7,18 +7,24 @@ $db = new DbConn();
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <title>Pitloze Duif</title>
 </head>
 <body>
+<div class="container">
 <h2>
     Voer duif informatie in <br>
 
 </h2>
 
-<div style=" border: 1px solid grey; float:left;">
+<div style=" border: 1px solid grey; float:left;" class="rounded, m-1, p-2">
 
-<?php include('src/doveInfo.php'); ?>
-
+    <?php
+    include_once "incl/doveInfo.php";
+    ?>
 </div>
 
 <div style="clear: both;">
@@ -40,10 +46,12 @@ $db = new DbConn();
             "<br>"
         ;
     }
+
+
     ?>
     </h5>
 
 
-
+</div>
 </body>
 </html>
